@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteSmoke">
+
+    <com.ltzk.mbsf.widget.TopBar
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="50dp"
+        android:background="@color/white"
+        android:layout_below="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.ltzk.mbsf.widget.LineNoEditText
+            android:background="@null"
+            android:gravity="top"
+            android:paddingLeft="30dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingRight="10dp"
+            android:textColorHighlight="@color/skyBlue"
+            android:theme="@style/TextViewSelect"
+            android:textColorHint="@color/gray"
+            android:hint="请输入集字内容..."
+            android:textColor="@android:color/black"
+            android:textCursorDrawable="@drawable/shape_cursor_blue"
+            android:textSize="14sp"
+            android:lineSpacingExtra="3dp"
+            android:lineSpacingMultiplier="1"
+            android:id="@+id/et_key"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </ScrollView>
+
+    <View
+        android:layout_marginLeft="28dp"
+        android:background="@color/whiteSmoke"
+        android:layout_below="@+id/top_bar"
+        android:layout_marginBottom="50dp"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"/>
+
+    <LinearLayout
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="49dp">
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:id="@+id/tv_clear"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="清除标点"
+            android:textColor="@color/colorPrimary"
+            android:background="@drawable/shape_solid_whitesmoke6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:id="@+id/tv_format"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="自动换行"
+            android:textColor="@color/colorPrimary"
+            android:background="@drawable/shape_solid_whitesmoke6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_tradition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/shape_solid_whitesmoke6"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            android:text="简 > 繁"
+            android:textColor="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/tv_simple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/shape_solid_whitesmoke6"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            android:text="繁 > 简"
+            android:textColor="@color/colorPrimary" />
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

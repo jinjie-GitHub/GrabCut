@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    app:bl_pressed_solid_color="@android:color/white"
+    app:bl_unPressed_solid_color="@android:color/white"
+    app:bl_stroke_color="@color/colorLine"
+    app:bl_stroke_width="1px">
+
+        <com.ltzk.mbsf.widget.MySmartRefreshLayout
+            android:id="@+id/refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srlAccentColor="@color/silver"
+                app:srlClassicsSpinnerStyle="Translate"
+                app:srlDrawableArrow="@mipmap/refresh_arrow_header"
+                app:srlDrawableArrowSize="36dp"
+                app:srlDrawableProgressSize="18dp"
+                app:srlFinishDuration="0"
+                app:srlTextSizeTime="13sp"
+                app:srlTextSizeTitle="14sp" />
+
+            <com.classic.common.MultipleStatusView
+                android:background="@color/whiteSmoke"
+                android:id="@+id/status_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:emptyView="@layout/empty_data"
+                app:errorView="@layout/empty_error"
+                app:loadingView="@layout/loading_view">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:background="@color/colorLine"
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never" />
+
+            </com.classic.common.MultipleStatusView>
+
+            <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+                android:id="@+id/footer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srlAccentColor="@color/silver"
+                app:srlDrawableArrow="@mipmap/refresh_arrow_header"
+                app:srlDrawableArrowSize="36dp"
+                app:srlTextSizeTitle="14sp" />
+
+        </com.ltzk.mbsf.widget.MySmartRefreshLayout>
+
+
+
+</LinearLayout>

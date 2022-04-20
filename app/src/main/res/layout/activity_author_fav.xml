@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteSmoke"
+    android:orientation="vertical">
+
+    <com.ltzk.mbsf.widget.TopBar
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.ltzk.mbsf.widget.MySmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tv_add_font"
+        android:layout_below="@+id/top_bar">
+
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srlAccentColor="@color/silver"
+            app:srlClassicsSpinnerStyle="Translate"
+            app:srlDrawableArrow="@mipmap/refresh_arrow_header"
+            app:srlDrawableArrowSize="36dp"
+            app:srlDrawableProgressSize="18dp"
+            app:srlFinishDuration="0"
+            app:srlTextSizeTime="13sp"
+            app:srlTextSizeTitle="14sp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="2dp">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.heaven7.android.dragflowlayout.DragFlowLayout
+                    android:id="@+id/tagLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </ScrollView>
+
+            <ViewStub
+                android:id="@+id/view_empty_data"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout="@layout/empty_data" />
+        </FrameLayout>
+
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            android:id="@+id/footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srlAccentColor="@color/silver"
+            app:srlDrawableArrow="@mipmap/refresh_arrow_header"
+            app:srlDrawableArrowSize="36dp"
+            app:srlTextSizeTitle="14sp" />
+    </com.ltzk.mbsf.widget.MySmartRefreshLayout>
+</RelativeLayout>

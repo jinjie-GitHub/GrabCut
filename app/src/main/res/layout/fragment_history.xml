@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ltzk.mbsf.widget.MySmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/refreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.scwang.smartrefresh.layout.header.ClassicsHeader
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srlAccentColor="@color/silver"
+        app:srlClassicsSpinnerStyle="Translate"
+        app:srlDrawableArrow="@mipmap/refresh_arrow_header"
+        app:srlDrawableArrowSize="36dp"
+        app:srlDrawableProgressSize="18dp"
+        app:srlFinishDuration="0"
+        app:srlTextSizeTime="13sp"
+        app:srlTextSizeTitle="14sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"
+        android:scrollbars="vertical" />
+
+    <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srlAccentColor="@color/silver"
+        app:srlDrawableArrow="@mipmap/refresh_arrow_header"
+        app:srlDrawableArrowSize="36dp"
+        app:srlFinishDuration="0"
+        app:srlTextSizeTitle="14sp" />
+
+</com.ltzk.mbsf.widget.MySmartRefreshLayout>

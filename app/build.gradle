@@ -1,46 +1,164 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
+
     defaultConfig {
-        applicationId "com.example.grabcut"
+        applicationId "com.ltzk.mbsf"
         minSdkVersion 21
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        targetSdkVersion 28
+        versionCode 473
+        versionName "4.7.3"
+
         externalNativeBuild {
             cmake {
                 cppFlags "-std=c++11 -frtti -fexceptions"
                 arguments "-DANDROID_STL=c++_shared"
-                abiFilters 'x86', 'x86_64', 'armeabi-v7a', 'arm64-v8a'
+                abiFilters 'arm64-v8a'
             }
         }
-        sourceSets {
-            main {
-                jniLibs.srcDirs = ['libs']
-            }
+
+        ndk {
+            abiFilters "arm64-v8a"
         }
     }
-    buildTypes {
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    /**
+     * 参考：https://developer.android.com/studio/build/build-variants#product-flavors
+     */
+    flavorDimensions "default"
+    productFlavors {
+        mysrv {}
+        yybao {}
+        huawei {}
+        xiaomi {}
+        oppo {}
+        vivo {}
+        baidu {}
+        '360' {}
+    }
+
+    /**
+     * 参考：https://developer.android.com/studio/build/manifest-build-variables
+     */
+    productFlavors.all {
+        flavor -> flavor.manifestPlaceholders = [CHANNEL: name]
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file("ygsf.jks")
+            storePassword "android"
+            keyAlias "mysf"
+            keyPassword "android"
+        }
         release {
+            storeFile file("ygsf.jks")
+            storePassword "android"
+            keyAlias "mysf"
+            keyPassword "android"
+        }
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "boolean", "LOG_DEBUG", "true"
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+
+        release {
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
     }
+
+    packagingOptions {
+        pickFirst '**/*.so'
+    }
+
     externalNativeBuild {
         cmake {
             path "CMakeLists.txt"
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    implementation project(':openCVLibrary320')
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.0-beta3'
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.2'
+
+    //64k问题：https://www.jianshu.com/p/a5353748159f
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    //图片加载
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+    implementation 'com.jakewharton:butterknife:10.1.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
+
+    //订阅观察者响应模式
+    //implementation 'io.reactivex.rxjava2:rxjava:2.0.8'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+
+    //网络请求框架
+    implementation 'com.squareup.retrofit2:retrofit:2.2.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.2.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.6.0'
+    implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0-RC3'
+
+    //EventBus
+    implementation 'org.greenrobot:eventbus:3.0.0'
+
+    //权限
+    implementation 'com.mylhyl:acp:1.1.7'
+
+    //气泡弹窗布局
+    implementation 'com.github.xujiaji:happy-bubble:1.1.9'
+    implementation 'com.qmuiteam:qmui:2.0.0-alpha07'
+
+    //缩放布局
+    implementation 'com.shopgun.android:zoomlayout:0.8.1'
+    implementation 'com.noober.background:core:1.6.2'
+    implementation 'com.classic.common:multiple-status-view:1.7'
+
+    //debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.3'
+    //releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'
+    //debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.3'
+
+    implementation 'me.yokeyword:fragmentationx:1.0.2'
+    implementation 'cn.tseeey:justtextview:0.1.0'
+    implementation 'com.yalantis:ucrop:2.2.0'
+    implementation files('libs/notchtools.aar')
+    //implementation files('libs/openCVLibrary340-release.aar')
+
+    //微信登录 支付 分享
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+    implementation 'com.xiaoetong.android.sdk:webcore:2.2.13'
+    implementation 'com.tencent.tbs.tbssdk:sdk:43993'
+    //implementation 'com.qq.e.union:union:4.420.1290'
+    implementation 'com.mikhaellopez:circularprogressbar:3.0.3'
+    implementation 'com.github.xiaohaibin:XBanner:androidx_v1.2.0'
+    implementation project(':openCVLibrary340')
+
+    implementation 'com.github.LightSun:android-drag-FlowLayout:1.8.8-x'
 }

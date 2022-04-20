@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <com.ltzk.mbsf.widget.TopBar
+        android:id="@+id/top_bar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/transparentWhiteSmoke">
+
+        <ImageView
+            android:id="@+id/left_button_"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_centerVertical="true"
+            android:paddingLeft="15dip"
+            android:paddingRight="15dip"
+            android:src="@mipmap/back"
+            app:tint="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/left_txt_"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/title_"
+            android:drawablePadding="2dp"
+            android:drawableTint="@color/colorPrimary"
+            android:gravity="center"
+            android:text="@string/app_glyph_prev"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/title_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:ellipsize="middle"
+            android:maxWidth="160dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/right_txt_"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/title_"
+            android:drawablePadding="2dp"
+            android:drawableTint="@color/colorPrimary"
+            android:gravity="center"
+            android:text="@string/app_glyph_next"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/right_button_"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:src="@mipmap/ic_video_upload"
+            app:tint="@color/colorPrimary" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorLine" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/recyclerView"
+        android:layout_below="@+id/action_bar">
+
+        <LinearLayout
+            android:id="@+id/ll_translate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/fl_render"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="10dp"
+                android:minHeight="300dp">
+
+                <com.ltzk.mbsf.widget.TouchImageView
+                    android:id="@+id/touch_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center" />
+
+                <ProgressBar
+                    android:id="@+id/loading"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:indeterminateBehavior="repeat"
+                    android:indeterminateDrawable="@drawable/shape_loading" />
+
+                <com.ltzk.mbsf.widget.CropView
+                    android:id="@+id/crop_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@drawable/shap_crop_border"
+                    android:layerType="software"
+                    app:cv_border_length="300dp"
+                    app:cv_corner_line_color="@color/colorPrimary"
+                    app:cv_corner_line_height="13dp"
+                    app:cv_corner_line_with="3dp"
+                    app:cv_is_show_corner_line="true"
+                    app:cv_is_show_square="true"
+                    app:cv_min_border_length="10dp"
+                    app:cv_scan_line_color="@color/colorPrimary" />
+
+                <com.ltzk.mbsf.widget.TouchImageView
+                    android:id="@+id/photo_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:visibility="gone" />
+
+                <com.ltzk.mbsf.widget.pen.PaintView
+                    android:id="@+id/draw_pen_view"
+                    android:layout_width="350dp"
+                    android:layout_height="350dp"
+                    android:layout_gravity="center"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <RelativeLayout
+                android:id="@+id/rel_write"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_exit_write"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:drawableTop="@mipmap/ic_quit_contrast"
+                    android:drawablePadding="6dp"
+                    android:drawableTint="@color/colorPrimary"
+                    android:gravity="center"
+                    android:text="退出手写"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_ishow"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_above="@+id/tv_exit_write"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="20dp"
+                    android:button="@drawable/selector_checkbox_write"
+                    android:gravity="center"
+                    android:tint="@color/colorPrimary"
+                    app:buttonTint="@color/colorPrimary" />
+
+                <ImageView
+                    android:id="@+id/iv_delete"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_above="@+id/tv_exit_write"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_toLeftOf="@+id/cb_ishow"
+                    android:scaleType="center"
+                    android:src="@mipmap/trash"
+                    app:tint="@color/silver" />
+
+                <ImageView
+                    android:id="@+id/iv_undo"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_above="@+id/tv_exit_write"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_toLeftOf="@+id/iv_delete"
+                    android:scaleType="center"
+                    android:src="@mipmap/ic_pen_undo"
+                    app:tint="@color/silver" />
+
+                <ImageView
+                    android:id="@+id/iv_brush"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:layout_above="@+id/tv_exit_write"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_toRightOf="@+id/cb_ishow"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_pen_brush"
+                    app:tint="@color/colorPrimary" />
+
+                <ImageView
+                    android:id="@+id/iv_action"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_above="@+id/tv_exit_write"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_toRightOf="@+id/iv_brush"
+                    android:scaleType="center"
+                    android:src="@mipmap/ic_download"
+                    app:tint="@color/silver" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/contrast"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_exit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:drawableTop="@mipmap/ic_quit_contrast"
+                    android:drawablePadding="6dp"
+                    android:drawableTint="@color/colorPrimary"
+                    android:gravity="center"
+                    android:text="退出对比"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/iv_adjuster"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_toLeftOf="@+id/tv_exit"
+                    android:src="@mipmap/ic_adjuster_bg"
+                    android:tint="@color/colorPrimary" />
+
+                <ImageView
+                    android:id="@+id/iv_download"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/tv_exit"
+                    android:src="@mipmap/ic_download"
+                    android:tint="@color/colorPrimary" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginBottom="80dp" />
+
+</RelativeLayout>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lay"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteSmoke"
+    android:orientation="vertical">
+
+    <com.ltzk.mbsf.widget.TopBar
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:alpha="0.975"
+        android:background="@color/colorLine"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <RadioGroup
+            android:id="@+id/rg_tab"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="5dip"
+            android:paddingBottom="7dip">
+
+            <RadioButton
+                android:id="@+id/rb_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:button="@null"
+                android:drawableTop="@mipmap/tab_dict"
+                android:drawableTint="@drawable/tab_text_color"
+                android:gravity="bottom|center_horizontal"
+                android:text="字典"
+                android:textColor="@drawable/tab_text_color"
+                android:textSize="11sp" />
+
+            <RadioButton
+                android:id="@+id/rb_2"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:button="@null"
+                android:drawableTop="@mipmap/tab_zitie"
+                android:drawableTint="@drawable/tab_text_color"
+                android:gravity="bottom|center_horizontal"
+                android:text="字帖"
+                android:textColor="@drawable/tab_text_color"
+                android:textSize="11sp" />
+
+            <RadioButton
+                android:id="@+id/rb_3"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:button="@null"
+                android:drawableTop="@mipmap/tab_jizi"
+                android:drawableTint="@drawable/tab_text_color"
+                android:gravity="bottom|center_horizontal"
+                android:text="集字"
+                android:textColor="@drawable/tab_text_color"
+                android:textSize="11sp" />
+
+            <RadioButton
+                android:id="@+id/rb_4"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:button="@null"
+                android:drawableTop="@mipmap/tab_find"
+                android:drawableTint="@drawable/tab_text_color"
+                android:gravity="bottom|center_horizontal"
+                android:text="发现"
+                android:textColor="@drawable/tab_text_color"
+                android:textSize="11sp" />
+
+            <RadioButton
+                android:id="@+id/rb_5"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:button="@null"
+                android:drawableTop="@mipmap/tab_my"
+                android:drawableTint="@drawable/tab_text_color"
+                android:gravity="bottom|center_horizontal"
+                android:text="我的"
+                android:textColor="@drawable/tab_text_color"
+                android:textSize="11sp" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="3dp">
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="占位1"
+                android:textColor="@color/transparent"
+                android:textSize="11dp" />
+
+            <View
+                android:id="@+id/msg_tip1"
+                android:layout_width="5dp"
+                android:layout_height="5dp"
+                android:background="@drawable/shape_solid_red"
+                android:visibility="invisible" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="占位2"
+                android:textColor="@color/transparent"
+                android:textSize="11dp" />
+
+            <View
+                android:id="@+id/msg_tip5"
+                android:layout_width="5dp"
+                android:layout_height="5dp"
+                android:background="@drawable/shape_solid_red"
+                android:visibility="invisible" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="占位3"
+                android:textColor="@color/transparent"
+                android:textSize="11dp" />
+
+            <View
+                android:id="@+id/msg_tip2"
+                android:layout_width="5dp"
+                android:layout_height="5dp"
+                android:background="@drawable/shape_solid_red"
+                android:visibility="invisible" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="占位4"
+                android:textColor="@color/transparent"
+                android:textSize="11dp" />
+
+            <View
+                android:id="@+id/msg_tip3"
+                android:layout_width="5dp"
+                android:layout_height="5dp"
+                android:background="@drawable/shape_solid_red"
+                android:visibility="invisible" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/msgView5"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="80dp"
+                android:background="@drawable/shape_solid_red"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="11dp"
+                android:visibility="invisible" />
+
+            <View
+                android:id="@+id/msg_tip4"
+                android:layout_width="5dp"
+                android:layout_height="5dp"
+                android:background="@drawable/shape_solid_red"
+                android:visibility="invisible" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

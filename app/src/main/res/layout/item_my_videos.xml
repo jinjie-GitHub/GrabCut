@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <ProgressBar
+            android:id="@+id/loading"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center"
+            android:indeterminateBehavior="repeat"
+            android:indeterminateDrawable="@drawable/shape_loading" />
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:minHeight="70dp"
+            android:padding="4dp" />
+    </FrameLayout>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/whiteSmoke" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.ltzk.mbsf.widget.BoldTextView
+            android:id="@+id/author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:ems="1"
+            android:gravity="center"
+            android:lineSpacingMultiplier="0.9"
+            android:textColor="@color/gray"
+            android:textSize="6sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="28dp"
+            android:background="@color/whiteSmoke" />
+
+        <com.ltzk.mbsf.widget.BoldTextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_gravity="center_vertical"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:lines="2"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:textColor="@color/gray"
+            android:textSize="10sp" />
+    </LinearLayout>
+</LinearLayout>

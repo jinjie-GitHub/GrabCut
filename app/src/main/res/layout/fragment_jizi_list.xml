@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteSmoke"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/transparentWhiteSmoke"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/left_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="新建"
+            android:textColor="@drawable/selector_color_gray_blue"
+            android:textSize="16sp" />
+
+        <com.ltzk.mbsf.widget.BoldTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="集字"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/right_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:enabled="false"
+            android:gravity="center"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="编辑"
+            android:textColor="@drawable/selector_color_gray_blue"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/colorLine" />
+
+    <LinearLayout
+        android:id="@+id/lay_login"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_login"
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:background="@drawable/shape_solid_transparent"
+            android:gravity="center"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="请您先登录"
+            android:textColor="@color/colorPrimary"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel_login_in"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--列表-->
+        <com.ltzk.mbsf.widget.MySmartRefreshLayout
+            android:id="@+id/swipeToLoadLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srlAccentColor="@color/silver"
+                app:srlClassicsSpinnerStyle="Translate"
+                app:srlDrawableArrow="@mipmap/refresh_arrow_header"
+                app:srlDrawableArrowSize="36dp"
+                app:srlDrawableProgressSize="18dp"
+                app:srlFinishDuration="0"
+                app:srlTextSizeTime="13sp"
+                app:srlTextSizeTitle="14sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="4dp" />
+
+            <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+                android:id="@+id/footer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srlAccentColor="@color/silver"
+                app:srlDrawableArrow="@mipmap/refresh_arrow_header"
+                app:srlDrawableArrowSize="36dp"
+                app:srlTextSizeTitle="14sp" />
+        </com.ltzk.mbsf.widget.MySmartRefreshLayout>
+
+        <TextView
+            android:id="@+id/tv_nodata"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:drawableLeft="@mipmap/nodata"
+            android:drawableTint="@color/lightGray"
+            android:gravity="center"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="空空如也..."
+            android:textColor="@color/lightGray"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_error"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:drawableLeft="@mipmap/nodata"
+            android:drawableTint="@color/lightGray"
+            android:gravity="center"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="未连接网络"
+            android:textColor="@color/lightGray"
+            android:visibility="gone" />
+    </RelativeLayout>
+</LinearLayout>

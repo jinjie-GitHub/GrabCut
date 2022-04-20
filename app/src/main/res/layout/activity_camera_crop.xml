@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:alpha="0" />
+
+    <RelativeLayout
+        android:id="@+id/ll_camera"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/camera_preview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/camera"
+            android:layout_below="@+id/pre_close"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical" />
+
+        <com.ltzk.mbsf.widget.CropView
+            android:id="@+id/cropView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layerType="software"
+            app:cv_border_length="300dp"
+            app:cv_corner_line_color="@android:color/transparent"
+            app:cv_corner_line_height="10dp"
+            app:cv_corner_line_with="1dp"
+            app:cv_is_show_alpha_bg="true"
+            app:cv_is_show_corner_line="false"
+            app:cv_min_border_length="1dp"
+            app:cv_scan_line_color="@android:color/holo_blue_dark" />
+
+        <ImageView
+            android:id="@+id/pre_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="80dp"
+            android:src="@mipmap/ic_camera_close" />
+
+        <ImageView
+            android:id="@+id/camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="20dp"
+            android:src="@mipmap/ic_camera_shutter" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_crop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <com.ltzk.mbsf.widget.crop.UCropView
+            android:id="@+id/uCropView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.ltzk.mbsf.widget.CropView
+            android:id="@+id/crop_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layerType="software"
+            app:cv_border_length="300dp"
+            app:cv_corner_line_color="@android:color/transparent"
+            app:cv_corner_line_height="10dp"
+            app:cv_corner_line_with="1dp"
+            app:cv_is_show_alpha_bg="true"
+            app:cv_is_show_corner_line="false"
+            app:cv_min_border_length="1dp"
+            app:cv_scan_line_color="@android:color/holo_blue_dark" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:text="移动和缩放"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/get_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="100dp"
+            android:src="@mipmap/ic_camera_close" />
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="30dp"
+            android:layout_marginTop="50dp"
+            android:background="@null"
+            android:text="重拍"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/sure"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="30dp"
+            android:layout_marginTop="50dp"
+            android:background="@null"
+            android:text="确定"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+    </RelativeLayout>
+</FrameLayout>

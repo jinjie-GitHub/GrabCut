@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/midnightBlue"
+    android:orientation="vertical">
+
+    <com.ltzk.mbsf.widget.TopBar
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <com.ltzk.mbsf.widget.MyWebView
+        android:id="@+id/swipe_target"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <View
+        android:id="@+id/alphaView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:visibility="gone" />
+
+    <com.ltzk.mbsf.widget.pen.PaintView
+        android:id="@+id/paintView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.ltzk.mbsf.widget.MarkView
+            android:id="@+id/markView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layerType="software"
+            app:cv_border_length="200dp"
+            app:cv_corner_line_color="@color/colorPrimary"
+            app:cv_corner_line_height="13dp"
+            app:cv_corner_line_with="3dp"
+            app:cv_is_show_corner_line="true"
+            app:cv_is_show_square="true"
+            app:cv_min_border_length="50dp"
+            app:cv_scan_line_color="@color/colorPrimary" />
+    </FrameLayout>
+
+    <ProgressBar
+        android:id="@+id/ll_loading"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_centerInParent="true"
+        android:indeterminateBehavior="repeat"
+        android:indeterminateDrawable="@drawable/shape_loading" />
+
+    <com.ltzk.mbsf.widget.CurtainView
+        android:id="@+id/maskView"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="50dp"
+        android:background="@color/midnightBlue"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginRight="2dp"
+            android:background="@color/gray" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginRight="5dp"
+            android:background="@color/gray" />
+    </com.ltzk.mbsf.widget.CurtainView>
+
+    <RelativeLayout
+        android:id="@+id/rl_ready"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:alpha="0.95">
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="6dp"
+            android:scaleType="center"
+            android:src="@mipmap/back"
+            app:tint="@color/colorPrimary" />
+
+        <LinearLayout
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/zd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@mipmap/ic_vs"
+                android:drawablePadding="0dp"
+                android:drawableTint="@color/colorPrimary"
+                android:gravity="center_horizontal"
+                android:text="遮挡"
+                android:textColor="@color/colorPrimary"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/gx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@mipmap/ic_small"
+                android:drawablePadding="0dp"
+                android:drawableTint="@color/colorPrimary"
+                android:gravity="center_horizontal"
+                android:text="格线"
+                android:textColor="@color/colorPrimary"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/sx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@mipmap/ic_write"
+                android:drawablePadding="0dp"
+                android:drawableTint="@color/colorPrimary"
+                android:gravity="center_horizontal"
+                android:text="手写"
+                android:textColor="@color/colorPrimary"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/sd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@mipmap/ic_lock"
+                android:drawablePadding="0dp"
+                android:drawableTint="@color/colorPrimary"
+                android:gravity="center_horizontal"
+                android:text="固定"
+                android:textColor="@color/colorPrimary"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/sc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/selector_checkbox_fav_bold"
+                android:drawablePadding="0dp"
+                android:drawableTint="@color/colorPrimary"
+                android:gravity="center_horizontal"
+                android:text="收藏"
+                android:textColor="@color/colorPrimary"
+                android:textSize="11sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_rotate"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@mipmap/rotate"
+                    app:tint="@color/colorPrimary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv_brush"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:text="旋转"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="11sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_write"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_brush"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_pen_brush"
+            app:tint="@color/colorPrimary" />
+
+        <ImageView
+            android:id="@+id/iv_delete"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@+id/iv_brush"
+            android:scaleType="center"
+            android:src="@mipmap/trash"
+            app:tint="@color/silver" />
+
+        <ImageView
+            android:id="@+id/iv_undo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@+id/iv_delete"
+            android:scaleType="center"
+            android:src="@mipmap/ic_pen_undo"
+            app:tint="@color/silver" />
+
+        <ImageView
+            android:id="@+id/iv_alpha"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/iv_brush"
+            android:scaleType="center"
+            android:src="@mipmap/ic_opacity"
+            app:tint="@color/colorPrimary" />
+
+        <ImageView
+            android:id="@+id/iv_action"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/iv_alpha"
+            android:scaleType="center"
+            android:src="@mipmap/ic_download"
+            app:tint="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/tv_move"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_brush"
+            android:layout_marginTop="10dp"
+            android:layout_toLeftOf="@+id/iv_brush"
+            android:drawableTop="@mipmap/ic_move"
+            android:drawableTint="@color/colorPrimary"
+            android:gravity="center"
+            android:text="移动"
+            android:textColor="@color/colorPrimary"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/tv_exit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_brush"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/iv_brush"
+            android:drawableTop="@mipmap/ic_quit_contrast"
+            android:drawableTint="@color/colorPrimary"
+            android:gravity="center"
+            android:text="退出"
+            android:textColor="@color/colorPrimary"
+            android:textSize="11sp" />
+    </RelativeLayout>
+</RelativeLayout>

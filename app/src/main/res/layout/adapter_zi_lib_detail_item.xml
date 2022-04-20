@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/lay_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:gravity="top|center_horizontal"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.ltzk.mbsf.widget.CropView
+            android:id="@+id/miView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            app:cv_corner_line_color="@android:color/transparent"
+            app:cv_corner_line_height="2dp"
+            app:cv_corner_line_with="2dp"
+            app:cv_is_show_alpha_bg="false"
+            app:cv_is_show_corner_line="false"
+            app:cv_is_show_square="false"
+            app:cv_min_border_length="0dp"
+            app:cv_scan_line_color="@color/lightGray" />
+
+        <com.ltzk.mbsf.widget.MyLoadingImageView
+            android:id="@+id/iv_thumb_url"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="4dp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/whiteSmoke" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.ltzk.mbsf.widget.BoldTextView
+            android:id="@+id/tv_author"
+            android:layout_width="15dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="1dp"
+            android:gravity="center"
+            android:lineSpacingMultiplier="0.9"
+            android:lines="3"
+            android:maxLength="3"
+            android:maxLines="3"
+            android:paddingLeft="3dp"
+            android:paddingTop="1dp"
+            android:paddingRight="3dp"
+            android:paddingBottom="1dp"
+            android:textColor="@color/gray"
+            android:textSize="7sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/whiteSmoke" />
+
+        <com.ltzk.mbsf.widget.BoldTextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:lineSpacingMultiplier="0.9"
+            android:maxLines="2"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:textColor="@color/black"
+            android:textSize="9sp" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/whiteSmoke" />
+
+        <ImageView
+            android:id="@+id/iv_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:src="@mipmap/edit"
+            app:tint="@color/colorPrimary" />
+    </LinearLayout>
+</LinearLayout>

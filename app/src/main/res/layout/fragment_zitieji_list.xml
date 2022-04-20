@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipeToLoadLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteSmoke">
+
+    <com.scwang.smartrefresh.layout.header.ClassicsHeader
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srlAccentColor="@color/silver"
+        app:srlClassicsSpinnerStyle="Translate"
+        app:srlDrawableArrow="@mipmap/refresh_arrow_header"
+        app:srlDrawableArrowSize="36dp"
+        app:srlDrawableProgressSize="18dp"
+        app:srlFinishDuration="0"
+        app:srlTextSizeTime="13sp"
+        app:srlTextSizeTitle="14sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--搜索头-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp">
+
+            <TextView
+                android:id="@+id/tv_all"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:background="@android:color/white"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="浏览全部"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_key"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="1dp"
+                android:layout_toLeftOf="@+id/tv_all"
+                android:background="@android:color/white"
+                android:drawableLeft="@mipmap/search"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/silver"
+                android:gravity="center_vertical"
+                android:hint="搜索作品"
+                android:imeOptions="actionSearch"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/silver" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="8dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:text="朝代分类"
+                android:textColor="@color/silver"
+                android:textSize="14sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_dynasty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:text="著名作者"
+                android:textColor="@color/silver"
+                android:textSize="14sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_author"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_nodata"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:drawableLeft="@mipmap/nodata"
+                android:drawableTint="@color/lightGray"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:text="空空如也..."
+                android:textColor="@color/lightGray"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_error"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:background="@drawable/shape_solid_transparent"
+                android:gravity="center"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="重新加载"
+                android:textColor="@color/colorPrimary"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_def"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="center"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/swipe_target"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@android:color/white"
+                android:paddingBottom="8dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srlAccentColor="@color/silver"
+        app:srlDrawableArrow="@mipmap/refresh_arrow_header"
+        app:srlDrawableArrowSize="36dp"
+        app:srlTextSizeTitle="14sp" />
+
+</com.scwang.smartrefresh.layout.SmartRefreshLayout>

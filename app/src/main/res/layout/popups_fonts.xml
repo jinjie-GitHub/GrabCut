@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteSmoke"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <com.ltzk.mbsf.widget.BoldTextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="16dp"
+            android:gravity="center"
+            android:text="我的字库"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+        <com.ltzk.mbsf.widget.BoldTextView
+            android:id="@+id/add_lib"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="16dp"
+            android:drawableTop="@mipmap/add_lib"
+            android:drawableTint="@color/colorPrimary"
+            android:gravity="center"
+            android:text="新建字库"
+            android:textColor="@color/colorPrimary"
+            android:textSize="10sp" />
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/colorLine" />
+
+    <com.ltzk.mbsf.widget.MySmartRefreshLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srlAccentColor="@color/silver"
+            app:srlClassicsSpinnerStyle="Translate"
+            app:srlDrawableArrow="@mipmap/refresh_arrow_header"
+            app:srlDrawableArrowSize="26dp"
+            app:srlDrawableProgressSize="16dp"
+            app:srlFinishDuration="0"
+            app:srlTextSizeTime="11sp"
+            app:srlTextSizeTitle="12sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minHeight="120dp" />
+
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            android:id="@+id/footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srlAccentColor="@color/silver"
+            app:srlDrawableArrow="@mipmap/refresh_arrow_header"
+            app:srlDrawableArrowSize="26dp"
+            app:srlDrawableProgressSize="16dp"
+            app:srlTextSizeTime="11sp"
+            app:srlTextSizeTitle="12sp" />
+    </com.ltzk.mbsf.widget.MySmartRefreshLayout>
+</LinearLayout>

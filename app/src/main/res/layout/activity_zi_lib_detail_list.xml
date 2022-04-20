@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteSmoke"
+    android:orientation="vertical">
+
+    <com.ltzk.mbsf.widget.TopBar
+        android:id="@+id/top_bar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/transparentWhiteSmoke">
+
+        <ImageView
+            android:id="@+id/left_button_"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_centerVertical="true"
+            android:background="@drawable/selector_view_transparent_gray"
+            android:paddingLeft="15dip"
+            android:paddingRight="15dip"
+            android:src="@mipmap/back"
+            app:tint="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/left_txt_"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/title_"
+            android:background="@drawable/selector_view_transparent_gray"
+            android:drawablePadding="2dp"
+            android:drawableTint="@color/colorPrimary"
+            android:gravity="center"
+            android:text="@string/app_glyph_prev"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/title_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:ellipsize="end"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:singleLine="true"
+            android:text="@string/app_name"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/right_txt_"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/title_"
+            android:background="@drawable/selector_view_transparent_gray"
+            android:drawablePadding="2dp"
+            android:drawableTint="@color/colorPrimary"
+            android:gravity="center"
+            android:text="@string/app_glyph_next"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/right_button_"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/selector_view_transparent_gray"
+            android:padding="6dp"
+            android:src="@mipmap/ic_book"
+            app:tint="@color/colorPrimary" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorLine" />
+    </RelativeLayout>
+
+    <com.ltzk.mbsf.widget.MySmartRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/topBar">
+
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srlAccentColor="@color/silver"
+            app:srlClassicsSpinnerStyle="Translate"
+            app:srlDrawableArrow="@mipmap/refresh_arrow_header"
+            app:srlDrawableArrowSize="36dp"
+            app:srlDrawableProgressSize="18dp"
+            app:srlFinishDuration="0"
+            app:srlTextSizeTime="13sp"
+            app:srlTextSizeTitle="14sp" />
+
+        <com.classic.common.MultipleStatusView
+            android:id="@+id/status_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:emptyView="@layout/empty_data"
+            app:errorView="@layout/empty_error"
+            app:loadingView="@layout/loading_view">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never" />
+        </com.classic.common.MultipleStatusView>
+
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            android:id="@+id/footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srlAccentColor="@color/silver"
+            app:srlDrawableArrow="@mipmap/refresh_arrow_header"
+            app:srlDrawableArrowSize="36dp"
+            app:srlTextSizeTitle="14sp" />
+    </com.ltzk.mbsf.widget.MySmartRefreshLayout>
+
+    <LinearLayout
+        android:id="@+id/lay_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:background="#eeffffff"
+        android:orientation="horizontal"
+        android:paddingLeft="80dp"
+        android:paddingTop="20dp"
+        android:paddingRight="80dp">
+
+        <ImageView
+            android:id="@+id/iv_sdcard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/photo"
+            app:tint="@color/colorPrimary" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/iv_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/camera"
+            app:tint="@color/colorPrimary" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/iv_font"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/font_lib_add"
+            app:tint="@color/colorPrimary" />
+    </LinearLayout>
+</RelativeLayout>

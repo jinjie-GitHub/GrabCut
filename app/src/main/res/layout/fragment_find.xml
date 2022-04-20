@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteSmoke"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <com.ltzk.mbsf.widget.XBanner
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            app:AutoPlayTime="3000"
+            app:bannerBottomMargin="5dp"
+            app:clipChildrenLeftMargin="30dp"
+            app:clipChildrenRightMargin="30dp"
+            app:isAutoPlay="false"
+            app:isClipChildrenMode="true"
+            app:isHandLoop="false"
+            app:isShowIndicatorOnlyOne="false"
+            app:isShowNumberIndicator="false"
+            app:pageChangeDuration="1000"
+            app:pointsVisibility="false"
+            app:showIndicatorInCenter="false" />
+
+        <ProgressBar
+            android:id="@+id/loading"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_gravity="center"
+            android:indeterminateBehavior="repeat"
+            android:indeterminateDrawable="@drawable/shape_loading" />
+    </FrameLayout>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/v_line">
+
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srlAccentColor="@color/silver"
+            app:srlClassicsSpinnerStyle="Translate"
+            app:srlDrawableArrow="@mipmap/refresh_arrow_header"
+            app:srlDrawableArrowSize="36dp"
+            app:srlDrawableProgressSize="18dp"
+            app:srlFinishDuration="0"
+            app:srlTextSizeTime="13sp"
+            app:srlTextSizeTitle="14sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="1dp" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</LinearLayout>

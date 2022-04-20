@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="6dp">
+
+    <TextView
+        android:id="@+id/tv_1"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:text="保存到相册"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/whiteSmoke" />
+
+    <com.ltzk.mbsf.widget.DrawableCenterCheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        android:button="@null"
+        android:clickable="true"
+        android:drawableLeft="@drawable/selector_checkbox_edit"
+        android:drawablePadding="8dp"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="是否包含格线"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp" />
+</LinearLayout>

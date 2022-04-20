@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rel_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="106dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="2dp">
+
+        <com.ltzk.mbsf.widget.MyLoadingImageView
+            android:id="@+id/iv_thumb_url"
+            android:layout_width="76dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/transparentWhiteSmoke"
+            android:gravity="center_horizontal" />
+
+        <com.ltzk.mbsf.widget.RotateTextView
+            android:id="@+id/tv_mark"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:background="@mipmap/jiaobiao"
+            android:backgroundTint="@color/transparentWhite"
+            android:drawableBottom="@mipmap/ic_fav"
+            android:gravity="center"
+            android:paddingBottom="24dp"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/index"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="-2dp"
+        android:text="@string/app_name"
+        android:textColor="@color/gray"
+        android:textSize="8sp" />
+</LinearLayout>

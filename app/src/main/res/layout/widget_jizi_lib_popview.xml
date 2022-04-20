@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.noober.background.view.BLLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="300dp"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="4dp"
+    app:bl_pressed_solid_color="@color/whiteSmoke"
+    app:bl_unPressed_solid_color="@color/whiteSmoke">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_author"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:drawableRight="@mipmap/arrow_down_small"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/gray"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="请选择字库"
+            android:textColor="@color/gray"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.ltzk.mbsf.widget.BoldTextView
+            android:id="@+id/tv_again"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_solid_white"
+            android:paddingLeft="15dp"
+            android:paddingTop="7dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="7dp"
+            android:text="重新集字"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15sp" />
+
+        <com.ltzk.mbsf.widget.BoldTextView
+            android:id="@+id/tv_supplement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_solid_white"
+            android:paddingLeft="15dp"
+            android:paddingTop="7dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="7dp"
+            android:text="缺字补选"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15sp" />
+    </LinearLayout>
+</com.noober.background.view.BLLinearLayout>

@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteSmoke"
+    android:orientation="vertical">
+
+    <!--头-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="5dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:scaleType="centerInside"
+            android:src="@mipmap/back"
+            app:tint="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/tv_key"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@+id/iv_back"
+            android:background="@drawable/shape_solid_white"
+            android:drawableLeft="@mipmap/search"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:hint="请输入汉字"
+            android:paddingLeft="15dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textColorHint="@color/silver"
+            android:textCursorDrawable="@drawable/shape_cursor_blue"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignRight="@+id/tv_key"
+            android:gravity="center">
+
+            <LinearLayout
+                android:id="@+id/lay_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/shape_solid_whitesmoke"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tv_author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="1dp"
+                    android:paddingBottom="5dp"
+                    android:text="书法家"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/iv_author_clean"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:paddingLeft="0dp"
+                    android:paddingTop="6dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="4dp"
+                    android:src="@mipmap/arrow_down_small"
+                    app:tint="@color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lay_type"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.ltzk.mbsf.widget.BoldTextView
+                    android:id="@+id/tv_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:drawableRight="@mipmap/arrow_down_small"
+                    android:drawablePadding="1dp"
+                    android:drawableTint="@color/colorPrimary"
+                    android:gravity="center"
+                    android:text="真迹"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!--线-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.6dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/colorLine" />
+
+    <!--字体类型选择-->
+    <com.ltzk.mbsf.widget.BoundedRadioGroup
+        android:id="@+id/rg_font"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        app:bounded_width="280dp">
+
+        <com.ltzk.mbsf.widget.UnderLineRadioButton
+            android:id="@+id/rb_1"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginLeft="1dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:text="楷"
+            android:textColor="@drawable/tab_libtext_color"
+            android:textSize="15sp"
+            app:lineH="2dp"
+            app:lineW="22dp" />
+
+        <com.ltzk.mbsf.widget.UnderLineRadioButton
+            android:id="@+id/rb_2"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginLeft="1dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:button="@null"
+            android:gravity="center"
+            android:text="行"
+            android:textColor="@drawable/tab_libtext_color"
+            android:textSize="15sp"
+            app:lineH="2dp"
+            app:lineW="22dp" />
+
+        <com.ltzk.mbsf.widget.UnderLineRadioButton
+            android:id="@+id/rb_3"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginLeft="1dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:button="@null"
+            android:gravity="center"
+            android:text="草"
+            android:textColor="@drawable/tab_libtext_color"
+            android:textSize="15sp"
+            app:lineH="2dp"
+            app:lineW="22dp" />
+
+        <com.ltzk.mbsf.widget.UnderLineRadioButton
+            android:id="@+id/rb_4"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginLeft="1dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:button="@null"
+            android:gravity="center"
+            android:text="隶"
+            android:textColor="@drawable/tab_libtext_color"
+            android:textSize="15sp"
+            app:lineH="2dp"
+            app:lineW="22dp" />
+
+        <com.ltzk.mbsf.widget.UnderLineRadioButton
+            android:id="@+id/rb_5"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginLeft="1dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:button="@null"
+            android:gravity="center"
+            android:text="篆"
+            android:textColor="@drawable/tab_libtext_color"
+            android:textSize="15sp"
+            app:lineH="2dp"
+            app:lineW="22dp" />
+
+        <com.ltzk.mbsf.widget.UnderLineRadioButton
+            android:id="@+id/rb_6"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginLeft="1dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:button="@null"
+            android:gravity="center"
+            android:text="印"
+            android:textColor="@drawable/tab_libtext_color"
+            android:textSize="15sp"
+            android:visibility="gone"
+            app:lineH="2dp"
+            app:lineW="22dp" />
+    </com.ltzk.mbsf.widget.BoundedRadioGroup>
+
+    <!--线-->
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.6dp"
+        android:background="@color/colorLine" />
+
+    <!--排序栏-->
+    <LinearLayout
+        android:id="@+id/lay_sort"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:animateLayoutChanges="true"
+        android:gravity="center_vertical">
+
+        <RadioGroup
+            android:id="@+id/rg_orderby_author"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.ltzk.mbsf.widget.UnderLineRadioButton
+                android:id="@+id/rb_orderby_author_1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:background="@null"
+                android:button="@null"
+                android:checked="true"
+                android:drawableRight="@mipmap/order_small"
+                android:drawablePadding="1dp"
+                android:drawableTint="@drawable/tab_checkbox_sort_bg"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="作者"
+                android:textColor="@drawable/tab_sort_text_color"
+                android:textSize="11sp"
+                app:textCheckColor="@color/black"
+                app:textDefaultColor="@color/gray" />
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="wrap_content" />
+
+            <com.ltzk.mbsf.widget.UnderLineRadioButton
+                android:id="@+id/rb_orderby_author_2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:background="@null"
+                android:button="@null"
+                android:drawableRight="@mipmap/order_small"
+                android:drawablePadding="1dp"
+                android:drawableTint="@drawable/tab_checkbox_sort_bg"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="数量"
+                android:textColor="@drawable/tab_sort_text_color"
+                android:textSize="11sp"
+                app:textCheckColor="@color/black"
+                app:textDefaultColor="@color/gray" />
+        </RadioGroup>
+
+        <View
+            android:layout_width="0.6dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorLine" />
+
+        <ImageView
+            android:id="@+id/iv_author"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:src="@mipmap/list_hide"
+            app:tint="#8A8A8A" />
+
+        <View
+            android:layout_width="0.6dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorLine" />
+
+        <RadioGroup
+            android:id="@+id/rg_orderby"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.ltzk.mbsf.widget.UnderLineRadioButton
+                android:id="@+id/rb_orderby_1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:button="@null"
+                android:checked="true"
+                android:drawableRight="@mipmap/order_large"
+                android:drawablePadding="2dp"
+                android:drawableTint="@drawable/tab_checkbox_sort_bg"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="热度"
+                android:textColor="@drawable/tab_sort_text_color"
+                android:textSize="12sp"
+                app:lineH="0dp"
+                app:textCheckColor="@color/black"
+                app:textDefaultColor="@color/gray" />
+
+            <com.ltzk.mbsf.widget.UnderLineRadioButton
+                android:id="@+id/rb_orderby_2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@null"
+                android:button="@null"
+                android:drawableRight="@mipmap/order_large"
+                android:drawablePadding="2dp"
+                android:drawableTint="@drawable/tab_checkbox_sort_bg"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="作者"
+                android:textColor="@drawable/tab_sort_text_color"
+                android:textSize="12sp"
+                app:lineH="0dp"
+                app:textCheckColor="@color/black"
+                app:textDefaultColor="@color/gray" />
+
+            <com.ltzk.mbsf.widget.UnderLineRadioButton
+                android:id="@+id/rb_orderby_3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:button="@null"
+                android:drawableRight="@mipmap/order_large"
+                android:drawablePadding="2dp"
+                android:drawableTint="@drawable/tab_checkbox_sort_bg"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="作品"
+                android:textColor="@drawable/tab_sort_text_color"
+                android:textSize="12sp"
+                app:lineH="0dp"
+                app:textCheckColor="@color/black"
+                app:textDefaultColor="@color/gray" />
+
+            <com.ltzk.mbsf.widget.UnderLineRadioButton
+                android:id="@+id/rb_orderby_4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:background="@null"
+                android:button="@null"
+                android:drawableRight="@mipmap/order_large"
+                android:drawablePadding="2dp"
+                android:drawableTint="@drawable/tab_checkbox_sort_bg"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="视频"
+                android:textColor="@drawable/tab_sort_text_color"
+                android:textSize="12sp"
+                app:lineH="0dp"
+                app:textCheckColor="@color/black"
+                app:textDefaultColor="@color/gray" />
+        </RadioGroup>
+
+        <ImageView
+            android:id="@+id/iv_change"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:src="@mipmap/item_large"
+            app:tint="#8A8A8A" />
+    </LinearLayout>
+
+    <!--线-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.6dp"
+        android:background="@color/colorLine" />
+
+    <!--数据-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:orientation="horizontal">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_author"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:background="@color/whiteSmoke"
+            android:overScrollMode="never" />
+
+        <View
+            android:layout_width="0.6dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorLine" />
+
+        <com.ltzk.mbsf.widget.MySmartRefreshLayout
+            android:id="@+id/refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srlAccentColor="@color/silver"
+                app:srlClassicsSpinnerStyle="Translate"
+                app:srlDrawableArrow="@mipmap/refresh_arrow_header"
+                app:srlDrawableArrowSize="36dp"
+                app:srlDrawableProgressSize="18dp"
+                app:srlFinishDuration="0"
+                app:srlTextSizeTime="13sp"
+                app:srlTextSizeTitle="14sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/tagLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:visibility="gone" />
+
+                <com.classic.common.MultipleStatusView
+                    android:id="@+id/status_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/tagLayout"
+                    app:emptyView="@layout/empty_data"
+                    app:errorView="@layout/empty_error"
+                    app:loadingView="@layout/loading_view">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:overScrollMode="never" />
+                </com.classic.common.MultipleStatusView>
+            </RelativeLayout>
+
+            <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+                android:id="@+id/footer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srlAccentColor="@color/silver"
+                app:srlDrawableArrow="@mipmap/refresh_arrow_header"
+                app:srlDrawableArrowSize="36dp"
+                app:srlTextSizeTitle="14sp" />
+        </com.ltzk.mbsf.widget.MySmartRefreshLayout>
+    </LinearLayout>
+</LinearLayout>

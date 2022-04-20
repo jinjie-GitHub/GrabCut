@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteSmoke"
+    android:orientation="vertical">
+
+    <com.ltzk.mbsf.widget.TopBar
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/transparentWhiteSmoke">
+
+        <ImageView
+            android:id="@+id/left_button_"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_centerVertical="true"
+            android:background="@drawable/selector_view_transparent_gray"
+            android:paddingLeft="15dip"
+            android:paddingRight="15dip"
+            android:src="@mipmap/back"
+            app:tint="@color/colorPrimary" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.ltzk.mbsf.widget.UnderLineRadioButton
+                android:id="@+id/rb_type_zitie"
+                android:layout_width="56dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="0dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:button="@null"
+                android:gravity="center"
+                android:paddingTop="3dp"
+                android:text="字帖"
+                android:textSize="16sp"
+                app:lineH="2dp"
+                app:lineW="32dp" />
+
+            <com.ltzk.mbsf.widget.UnderLineRadioButton
+                android:id="@+id/rb_type_zilib"
+                android:layout_width="56dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:button="@null"
+                android:gravity="center"
+                android:paddingTop="3dp"
+                android:text="字库"
+                android:textSize="16sp"
+                app:lineH="2dp"
+                app:lineW="32dp" />
+        </RadioGroup>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorLine" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

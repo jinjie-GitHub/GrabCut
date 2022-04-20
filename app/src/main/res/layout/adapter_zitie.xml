@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.ltzk.mbsf.widget.MyLoadingImageView
+            android:id="@+id/iv_thumb_url"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:padding="5dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <com.ltzk.mbsf.widget.RotateTextView
+            android:id="@+id/rtv"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:layout_alignParentRight="true"
+            android:background="@mipmap/jiaobiao"
+            android:backgroundTint="@color/transparentWhite"
+            android:gravity="center"
+            android:paddingBottom="23dp"
+            android:text="VIP"
+            android:textColor="@color/orange"
+            android:textSize="10sp" />
+
+        <LinearLayout
+            android:id="@+id/lay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="@color/lightCyan"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/cb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="center"
+                android:src="@mipmap/check_1"
+                app:tint="@android:color/white" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_author"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:layout_marginTop="1dp"
+        android:background="@android:color/white"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:lineSpacingMultiplier="0.9"
+        android:lines="2"
+        android:maxLines="2"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:textColor="@color/dimGray"
+        android:textSize="11sp" />
+</LinearLayout>

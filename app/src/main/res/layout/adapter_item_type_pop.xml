@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/radioGroup"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="4dp">
+
+    <RadioButton
+        android:id="@+id/tv_1"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="@android:color/white"
+        android:button="@null"
+        android:gravity="center"
+        android:text="真迹"
+        android:textColor="@drawable/tab_libtext_color"
+        android:textSize="14sp" />
+
+    <RadioButton
+        android:id="@+id/tv_2"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginTop="0.5dp"
+        android:background="@android:color/white"
+        android:button="@null"
+        android:gravity="center"
+        android:text="字典"
+        android:textColor="@drawable/tab_libtext_color"
+        android:textSize="14sp" />
+
+    <RadioButton
+        android:id="@+id/tv_3"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginTop="0.5dp"
+        android:background="@android:color/white"
+        android:button="@null"
+        android:gravity="center"
+        android:text="字库"
+        android:textColor="@drawable/tab_libtext_color"
+        android:textSize="14sp" />
+</RadioGroup>

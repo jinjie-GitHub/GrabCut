@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteSmoke">
+
+    <com.ltzk.mbsf.widget.TopBar
+        android:visibility="gone"
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:background="@color/whiteSmoke"
+        android:layout_marginTop="5dp"
+        android:paddingBottom="5dp"
+        android:id="@+id/lay_search_top"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="44dp">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            app:tint="@color/colorPrimary"
+            android:src="@mipmap/back"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:layout_width="50dp"
+            android:layout_height="match_parent" />
+
+        <EditText
+            android:layout_marginRight="10dp"
+            android:editable="false"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:drawableLeft="@mipmap/ic_home_search"
+            android:drawableTint="@color/silver"
+            android:drawablePadding="10dp"
+            android:maxLength="5"
+            android:singleLine="true"
+            android:imeOptions="actionSearch"
+            android:textColorHint="@color/silver"
+            android:textCursorDrawable="@drawable/shape_cursor_blue"
+            android:hint="请输入需要查询的汉字"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:background="@drawable/shape_solid_white"
+            android:id="@+id/et_key"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/v_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.6dp"
+        android:layout_below="@+id/lay_search_top"
+        android:background="@color/colorLine" />
+
+    <FrameLayout
+        android:id="@+id/fl_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/v_line" />
+</RelativeLayout>

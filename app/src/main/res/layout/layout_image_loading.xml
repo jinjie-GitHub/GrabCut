@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:gravity="center"
+        android:visibility="gone"
+        android:background="@color/whiteSmoke"
+        android:id="@+id/tv_text"
+        android:textSize="16sp"
+        android:textColor="@color/lightGray"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <LinearLayout
+        android:background="@color/white"
+        android:padding="5dp"
+        android:gravity="center"
+        android:id="@+id/lay_loading"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ProgressBar
+            android:id="@+id/loading"
+            style="@android:style/Widget.ProgressBar"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_gravity="center_horizontal"
+            android:indeterminateDrawable="@drawable/shape_loading"
+            android:indeterminateOnly="true" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tv_msg"
+            android:textColor="@color/gray"
+            android:textSize="10sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:text="加载中..." />
+    </LinearLayout>
+</RelativeLayout>

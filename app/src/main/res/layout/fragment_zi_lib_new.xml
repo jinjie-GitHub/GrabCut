@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/lay"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteSmoke"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/iv_left"
+                android:layout_width="28dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:scaleType="center"
+                android:src="@mipmap/close2"
+                app:tint="@color/colorPrimary" />
+
+            <RadioGroup
+                android:id="@+id/rg_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <com.ltzk.mbsf.widget.UnderLineRadioButton
+                    android:id="@+id/rb_type_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="最新"
+                    android:textSize="16sp"
+                    app:lineH="2dp"
+                    app:lineW="30dp" />
+
+                <com.ltzk.mbsf.widget.UnderLineRadioButton
+                    android:id="@+id/rb_type_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:button="@null"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:text="热门"
+                    android:textSize="16sp"
+                    app:lineH="2dp"
+                    app:lineW="30dp" />
+
+                <com.ltzk.mbsf.widget.UnderLineRadioButton
+                    android:id="@+id/rb_type_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="我的"
+                    android:textSize="16sp"
+                    app:lineH="2dp"
+                    app:lineW="30dp" />
+
+                <com.ltzk.mbsf.widget.UnderLineRadioButton
+                    android:id="@+id/rb_type_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="收藏"
+                    android:textSize="16sp"
+                    app:lineH="2dp"
+                    app:lineW="30dp" />
+            </RadioGroup>
+
+            <ImageView
+                android:id="@+id/iv_search"
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:src="@mipmap/search"
+                app:tint="@color/colorPrimary" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorLine" />
+
+        <LinearLayout
+            android:id="@+id/ll_kind_font"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal"
+            android:padding="2dp">
+
+            <RadioGroup
+                android:id="@+id/rg_kid"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="3dp"
+                android:background="@color/colorLine"
+                android:orientation="horizontal"
+                android:padding="2dp">
+
+                <RadioButton
+                    android:id="@+id/rb_kid_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/tab_checkbox_bg3"
+                    android:button="@null"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:text="毛笔"
+                    android:textColor="@drawable/check_text_color"
+                    android:textSize="14sp" />
+
+                <RadioButton
+                    android:id="@+id/rb_kid_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/tab_checkbox_bg3"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="硬笔"
+                    android:textColor="@drawable/check_text_color"
+                    android:textSize="14sp" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/whiteSmoke" />
+
+            <RadioGroup
+                android:id="@+id/rg_font"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="1dp">
+
+                <com.ltzk.mbsf.widget.UnderLineRadioButton
+                    android:id="@+id/rb_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:button="@null"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:text="楷"
+                    android:textSize="15sp"
+                    app:lineH="2dp"
+                    app:lineW="16dp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/whiteSmoke" />
+
+                <com.ltzk.mbsf.widget.UnderLineRadioButton
+                    android:id="@+id/rb_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="行"
+                    android:textSize="15sp"
+                    app:lineH="2dp"
+                    app:lineW="16dp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/whiteSmoke" />
+
+                <com.ltzk.mbsf.widget.UnderLineRadioButton
+                    android:id="@+id/rb_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="草"
+                    android:textSize="15sp"
+                    app:lineH="2dp"
+                    app:lineW="16dp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/whiteSmoke" />
+
+                <com.ltzk.mbsf.widget.UnderLineRadioButton
+                    android:id="@+id/rb_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="隶"
+                    android:textSize="15sp"
+                    app:lineH="2dp"
+                    app:lineW="16dp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/whiteSmoke" />
+
+                <com.ltzk.mbsf.widget.UnderLineRadioButton
+                    android:id="@+id/rb_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="篆"
+                    android:textSize="15sp"
+                    app:lineH="2dp"
+                    app:lineW="16dp" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/kind_font_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorLine" />
+    </LinearLayout>
+
+    <include
+        layout="@layout/fragment_zi_lib_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/topLayout"
+        android:layout_above="@+id/tv_add_font"/>
+
+    <com.ltzk.mbsf.widget.BoldTextView
+        android:id="@+id/tv_add_font"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:alpha="0.975"
+        android:background="@color/white"
+        android:gravity="center"
+        android:text="新建字库"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
+        android:visibility="gone" />
+</RelativeLayout>

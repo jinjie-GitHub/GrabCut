@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteSmoke"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <com.ltzk.mbsf.widget.TopBar
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:padding="10dp"
+            android:text="字库名"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="|"
+            android:textColor="@color/lightGray"
+            android:textSize="20sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="请输入字库名"
+                android:imeOptions="actionSend"
+                android:inputType="text"
+                android:maxLength="16"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/lightGray"
+                android:textCursorDrawable="@drawable/shape_cursor_blue"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/iv_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="5dp"
+                android:src="@mipmap/clear"
+                android:visibility="gone"
+                app:tint="@color/lightGray" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/lightGray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:padding="10dp"
+            android:text="作　者"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="|"
+            android:textColor="@color/lightGray"
+            android:textSize="20sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/et_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="请输入作者名"
+                android:imeOptions="actionSend"
+                android:inputType="text"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/lightGray"
+                android:textCursorDrawable="@drawable/shape_cursor_blue"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/iv_delete_pwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="5dp"
+                android:src="@mipmap/clear"
+                android:visibility="gone"
+                app:tint="@color/lightGray" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/lightGray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:id="@+id/rg_kind"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_kind_1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:button="@null"
+                android:checked="true"
+                android:drawableLeft="@drawable/selector_checkbox_blue"
+                android:drawablePadding="5dp"
+                android:padding="5dp"
+                android:text="毛笔"
+                android:textColor="@color/black" />
+
+            <RadioButton
+                android:id="@+id/rb_kind_2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:button="@null"
+                android:drawableLeft="@drawable/selector_checkbox_blue"
+                android:drawablePadding="5dp"
+                android:padding="5dp"
+                android:text="硬笔"
+                android:textColor="@color/black" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/rg_font"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/tab_checkbox_bg"
+                android:button="@null"
+                android:gravity="center"
+                android:text="楷"
+                android:textColor="@drawable/tab_text_color"
+                android:textSize="15sp" />
+
+            <RadioButton
+                android:id="@+id/rb_2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/tab_checkbox_bg"
+                android:button="@null"
+                android:gravity="center"
+                android:text="行"
+                android:textColor="@drawable/tab_text_color"
+                android:textSize="15sp" />
+
+            <RadioButton
+                android:id="@+id/rb_3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/tab_checkbox_bg"
+                android:button="@null"
+                android:gravity="center"
+                android:text="草"
+                android:textColor="@drawable/tab_text_color"
+                android:textSize="15sp" />
+
+            <RadioButton
+                android:id="@+id/rb_4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/tab_checkbox_bg"
+                android:button="@null"
+                android:gravity="center"
+                android:text="隶"
+                android:textColor="@drawable/tab_text_color"
+                android:textSize="15sp" />
+
+            <RadioButton
+                android:id="@+id/rb_5"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/tab_checkbox_bg"
+                android:button="@null"
+                android:gravity="center"
+                android:text="篆"
+                android:textColor="@drawable/tab_text_color"
+                android:textSize="15sp" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/lightGray" />
+
+    <TextView
+        android:id="@+id/tv_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/colorLine"
+        android:gravity="center"
+        android:padding="13dp"
+        android:text="删除字库"
+        android:textColor="@drawable/selector_btn_gray_red"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:visibility="gone"
+        android:id="@+id/rg_access"
+        android:layout_width="206dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/shape_solid_gray_radius4"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="3dp">
+
+        <RadioButton
+            android:id="@+id/rb_access_1"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/tab_checkbox_bg4"
+            android:button="@null"
+            android:gravity="center"
+            android:text="私有"
+            android:textColor="@drawable/check_text_color"
+            android:textSize="14sp" />
+
+        <RadioButton
+            android:id="@+id/rb_access_2"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="1dp"
+            android:background="@drawable/tab_checkbox_bg4"
+            android:button="@null"
+            android:gravity="center"
+            android:text="共享"
+            android:textColor="@drawable/check_text_color"
+            android:textSize="14sp" />
+    </RadioGroup>
+
+</LinearLayout>

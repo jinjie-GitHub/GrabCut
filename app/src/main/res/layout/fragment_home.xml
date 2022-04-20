@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/refreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparentWhiteSmoke">
+
+    <com.scwang.smartrefresh.layout.header.ClassicsHeader
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srlAccentColor="@color/silver"
+        app:srlClassicsSpinnerStyle="Translate"
+        app:srlDrawableArrow="@mipmap/refresh_arrow_header"
+        app:srlDrawableArrowSize="36dp"
+        app:srlDrawableProgressSize="18dp"
+        app:srlFinishDuration="0"
+        app:srlTextSizeTime="13sp"
+        app:srlTextSizeTitle="14sp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.ltzk.mbsf.widget.TopBar
+            android:id="@+id/top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.64" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/guideline"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:scaleType="centerInside"
+                android:src="@mipmap/ic_home_logo" />
+
+            <TextView
+                android:id="@+id/calendar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="26dp"
+                android:textColor="@color/gray"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/btn_search"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginLeft="22dp"
+                android:layout_marginRight="22dp"
+                android:background="@drawable/shap_home_search_btn"
+                android:drawableLeft="@mipmap/ic_home_search"
+                android:drawablePadding="6dp"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="20dp"
+                android:text="毛笔查询"
+                android:textColor="@color/lightGray"
+                android:textSize="16sp" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="0dp"
+                app:tabBackground="@null"
+                app:tabGravity="center"
+                app:tabIndicatorFullWidth="false"
+                app:tabIndicatorHeight="0dp"
+                app:tabMinWidth="70dp"
+                app:tabMode="scrollable"
+                app:tabPaddingEnd="0dp"
+                app:tabPaddingStart="0dp"
+                app:tabRippleColor="@android:color/transparent" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/whiteSmoke">
+
+                <com.ltzk.mbsf.widget.XBanner
+                    android:id="@+id/banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    app:AutoPlayTime="3000"
+                    app:bannerBottomMargin="5dp"
+                    app:clipChildrenLeftMargin="30dp"
+                    app:clipChildrenRightMargin="30dp"
+                    app:isAutoPlay="false"
+                    app:isClipChildrenMode="true"
+                    app:isHandLoop="false"
+                    app:isShowIndicatorOnlyOne="false"
+                    app:isShowNumberIndicator="false"
+                    app:pageChangeDuration="1000"
+                    app:pointsVisibility="false"
+                    app:showIndicatorInCenter="false" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <com.ltzk.mbsf.widget.BoldTextView
+            android:id="@+id/book"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="26dp"
+            android:text="每日书论"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+        <TextView
+            android:id="@+id/tv_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:drawableRight="@mipmap/arrow_right_s"
+            android:drawablePadding="6dp"
+            android:gravity="center_vertical"
+            android:text="查看历史"
+            android:textColor="#999999"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/book"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/book" />
+
+        <RelativeLayout
+            android:id="@+id/ll_book"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="24dp"
+            android:background="@drawable/shap_home_book_today"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/book">
+
+            <ProgressBar
+                android:id="@+id/loading"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:indeterminateBehavior="repeat"
+                android:indeterminateDrawable="@drawable/shape_loading" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/tv_author">
+
+                <cn.tseeey.justtext.JustTextView
+                    android:id="@+id/tv_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginRight="18dp"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:letterSpacing="0.1"
+                    android:lineSpacingExtra="2dp"
+                    android:maxLines="3"
+                    android:padding="4dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:justify="true" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tv_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="12dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="#999999"
+                android:textSize="13sp" />
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.scwang.smartrefresh.layout.SmartRefreshLayout>

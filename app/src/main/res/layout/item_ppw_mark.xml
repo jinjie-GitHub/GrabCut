@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants">
+
+    <com.ltzk.mbsf.widget.CropView
+        android:id="@+id/crop_view"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:clickable="false"
+        android:layerType="software"
+        app:cv_border_length="2dp"
+        app:cv_corner_line_color="@color/lightGray"
+        app:cv_corner_line_height="2dp"
+        app:cv_corner_line_with="2dp"
+        app:cv_is_show_corner_line="false"
+        app:cv_min_border_length="2dp"
+        app:cv_scan_line_color="@color/lightGray" />
+
+</FrameLayout>

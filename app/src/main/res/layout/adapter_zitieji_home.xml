@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lay_item"
+    android:padding="1dp"
+    android:background="@color/whiteSmoke"
+    android:orientation="vertical"
+    android:gravity="top|center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.ltzk.mbsf.widget.MyLoadingImageView
+            android:padding="5dp"
+            android:id="@+id/iv_thumb_url"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.ltzk.mbsf.widget.RotateTextView
+            android:visibility="gone"
+            android:backgroundTint="@color/transparentWhite"
+            android:id="@+id/rtv"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:layout_alignParentRight="true"
+            android:background="@mipmap/jiaobiao"
+            android:gravity="center"
+            android:paddingBottom="23dp"
+            android:text="VIP"
+            android:textColor="@color/orange"
+            android:textSize="10sp" />
+
+    </RelativeLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:layout_marginTop="1dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="28dp">
+        <com.ltzk.mbsf.widget.BoldTextView
+            android:layout_marginRight="1dp"
+            android:gravity="center"
+            android:background="@android:color/white"
+            android:lineSpacingMultiplier="0.9"
+            android:textSize="7sp"
+            android:textColor="@color/gray"
+            android:maxLength="3"
+            android:lines="3"
+            android:maxLines="3"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:paddingTop="1dp"
+            android:paddingBottom="1dp"
+            android:id="@+id/tv_author"
+            android:layout_width="15dp"
+            android:layout_height="match_parent" />
+
+
+        <TextView
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:background="@android:color/white"
+            android:textSize="11sp"
+            android:textColor="@color/dimGray"
+            android:lineSpacingMultiplier="0.9"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+
+
+</LinearLayout>

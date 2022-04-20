@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="280dp"
+        android:layout_height="260dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/shape_private_policy">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:text="以观书法隐私政策"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:lineSpacingExtra="6dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="感谢您使用以观书法产品！为帮助您安全使用产品和服务，请您在使用前仔细阅读并透彻理解《以观书法隐私政策》。如您同意此政策，请点击“同意”并开始使用我们的产品和服务，我们尽全力保护您的个人信息安全。"
+            android:textColor="@color/gray"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_disagree"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="88dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="32dp"
+                android:background="@drawable/sel_rect_4_stoke_white_gray"
+                android:text="不同意"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btn_agree"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="88dp"
+                android:layout_height="40dp"
+                android:background="@drawable/sel_rect_4_stoke_white_gray"
+                android:textStyle="bold"
+                android:text="同意并继续"
+                android:textColor="@color/darkRed"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

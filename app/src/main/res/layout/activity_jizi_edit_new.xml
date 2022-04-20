@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rel"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteSmoke"
+    android:orientation="vertical">
+
+    <com.ltzk.mbsf.widget.TopBar
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/rl_bar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/whiteSmoke">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:paddingLeft="16dip"
+            android:paddingRight="16dip"
+            android:src="@mipmap/back"
+            app:tint="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/tv_design"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="22dp"
+            android:layout_toLeftOf="@+id/tv_auto"
+            android:drawableTop="@mipmap/ic_jizi_design"
+            android:drawableTint="@color/colorPrimary"
+            android:gravity="center_horizontal"
+            android:text="设置"
+            android:textColor="@color/gray"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/tv_auto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="22dp"
+            android:layout_toLeftOf="@+id/tv_zitie"
+            android:drawableTop="@mipmap/ic_jizi_shufajia"
+            android:drawableTint="@color/colorPrimary"
+            android:gravity="center_horizontal"
+            android:text="书法家"
+            android:textColor="@color/gray"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/tv_zitie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:drawableTop="@mipmap/ic_jizi_zitie"
+            android:drawableTint="@color/colorPrimary"
+            android:gravity="center_horizontal"
+            android:text="字帖"
+            android:textColor="@color/gray"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/tv_fontlib"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="22dp"
+            android:layout_toRightOf="@+id/tv_zitie"
+            android:drawableTop="@mipmap/ic_jizi_fontlib"
+            android:drawableTint="@color/colorPrimary"
+            android:gravity="center_horizontal"
+            android:text="字库"
+            android:textColor="@color/gray"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/tv_preview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="22dp"
+            android:layout_toRightOf="@+id/tv_fontlib"
+            android:drawableTop="@mipmap/ic_jizi_preview"
+            android:drawableTint="@color/colorPrimary"
+            android:gravity="center_horizontal"
+            android:text="预览"
+            android:textColor="@color/gray"
+            android:textSize="10sp" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/v_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/rl_bar"
+        android:background="@color/colorLine" />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/v_line">
+
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srlAccentColor="@color/silver"
+            app:srlClassicsSpinnerStyle="Translate"
+            app:srlDrawableArrow="@mipmap/refresh_arrow_header"
+            app:srlDrawableArrowSize="36dp"
+            app:srlDrawableProgressSize="18dp"
+            app:srlFinishDuration="0"
+            app:srlTextSizeTime="13sp"
+            app:srlTextSizeTitle="14sp" />
+
+        <com.tencent.smtt.sdk.WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/whiteSmoke"
+            android:scrollbars="none" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_loading"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/shape_solid_transparentwhite"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <ProgressBar
+            android:id="@+id/loading"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:indeterminateBehavior="repeat"
+            android:indeterminateDrawable="@drawable/shape_loading" />
+    </LinearLayout>
+</RelativeLayout>

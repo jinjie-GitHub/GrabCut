@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteSmoke"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="36dp">
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/iv_back"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:tint="@color/colorPrimary"
+            android:src="@mipmap/back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"/>
+
+        <EditText
+            android:layout_toRightOf="@+id/iv_back"
+            android:gravity="center_vertical"
+            android:layout_toLeftOf="@+id/tv_search"
+            android:id="@+id/et_key"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_solid_white"
+            android:drawableLeft="@mipmap/ic_home_search"
+            android:drawableTint="@color/silver"
+            android:drawablePadding="10dp"
+            android:hint="请输入汉字"
+            android:imeOptions="actionSearch"
+            android:maxLength="10"
+            android:paddingLeft="9dp"
+            android:paddingRight="9dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textColorHint="@color/silver"
+            android:textCursorDrawable="@drawable/shape_cursor_blue"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_alignRight="@+id/et_key"
+            android:id="@+id/iv_delete_key"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:src="@mipmap/clear"
+            app:tint="@color/lightGray" />
+
+        <TextView
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:id="@+id/tv_search"
+            android:text="搜索"
+            android:textColor="@color/colorPrimary"
+            android:textSize="14sp"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:layout_centerVertical="true"
+            android:paddingLeft="15dp"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="最近搜索"
+            android:textColor="@color/silver" />
+
+        <ImageView
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="10dp"
+            android:layout_alignParentRight="true"
+            android:id="@+id/iv_clear"
+            android:src="@mipmap/trash"
+            android:tint="@color/silver"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+    </RelativeLayout>
+
+
+    <ListView
+        android:id="@+id/lv_key"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/colorLine"
+        android:dividerHeight="1dp"
+        android:paddingBottom="20dp" />
+
+
+</LinearLayout>

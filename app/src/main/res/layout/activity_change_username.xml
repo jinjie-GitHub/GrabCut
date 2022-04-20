@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteSmoke"
+    android:orientation="vertical">
+
+    <com.ltzk.mbsf.widget.TopBar
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:background="@android:color/white"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:textColor="@color/black"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="用户名"
+             />
+
+        <TextView
+            android:textColor="@color/lightGray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="|"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:singleLine="true"
+                android:padding="10dp"
+                android:background="@null"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:id="@+id/et_phone"
+                android:hint="请输入用户名"
+                android:textColorHint="@color/lightGray"
+                android:textCursorDrawable="@drawable/shape_cursor_blue"
+                android:maxLength="16"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" />
+
+            <ImageView
+                android:visibility="gone"
+                android:tint="@color/lightGray"
+                android:id="@+id/iv_delete"
+                android:padding="5dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/lightGray"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:textColor="@color/black"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="密　码"
+            />
+
+        <TextView
+            android:textColor="@color/lightGray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="|"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:singleLine="true"
+                android:padding="10dp"
+                android:background="@null"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:id="@+id/et_code"
+                android:hint="请输入密码"
+                android:textColorHint="@color/lightGray"
+                android:textCursorDrawable="@drawable/shape_cursor_blue"
+                android:inputType="textPassword"
+                android:maxLength="16"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" />
+            <ImageView
+                android:visibility="gone"
+                android:tint="@color/lightGray"
+                android:id="@+id/iv_delete_pwd"
+                android:padding="5dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+
+    <TextView
+        android:enabled="false"
+        android:gravity="center"
+        android:background="@drawable/selector_shape_gray_blue"
+        android:padding="13dp"
+        android:id="@+id/tv_btn"
+        android:textColor="@drawable/selector_btn_gray_white"
+        android:textSize="16sp"
+        android:text="设置"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:visibility="invisible"
+            android:padding="10dip"
+            android:id="@+id/tv_1"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:text="用户注册"
+            android:textColor="@color/colorPrimary"/>
+
+        <TextView
+            android:padding="10dip"
+            android:id="@+id/tv_2"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:text="免费注册"
+            android:textColor="@color/colorPrimary"
+            android:gravity="right"/>
+    </LinearLayout>
+</LinearLayout>

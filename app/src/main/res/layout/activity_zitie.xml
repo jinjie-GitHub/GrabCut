@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/render"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:alpha="0"
+        android:background="@android:color/transparent" />
+
+    <!--大图内容-->
+    <com.ltzk.mbsf.widget.ParentViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="100dp"
+        android:paddingBottom="100dp" />
+
+    <!--vip购买按钮-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:paddingBottom="100dp">
+
+        <TextView
+            android:id="@+id/tv_vip"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/shape_solid_transparentwhite90"
+            android:gravity="center"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="VIP精品字帖"
+            android:textColor="@color/colorPrimary"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <com.ltzk.mbsf.widget.TopBar
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/iv_setting"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="176dp"
+        android:background="@drawable/selector_view_transparent_gray"
+        android:padding="2dp"
+        android:src="@mipmap/ic_adjuster_bg"
+        android:visibility="gone"
+        app:tint="@color/colorPrimary" />
+
+    <!--缩略图-->
+    <RelativeLayout
+        android:id="@+id/lay_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_alignParentBottom="true">
+
+        <!--操作区-->
+        <LinearLayout
+            android:id="@+id/ll_items"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:alpha="0.95"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <View
+                android:layout_width="0dip"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <com.ltzk.mbsf.widget.BoldTextView
+                android:id="@+id/iv_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableTop="@mipmap/ic_zitie_postion_unfocus"
+                android:drawableTint="@color/colorPrimary"
+                android:gravity="center_horizontal"
+                android:text="定位"
+                android:textColor="@color/silver"
+                android:textSize="8sp" />
+
+            <View
+                android:layout_width="0dip"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <CheckBox
+                android:id="@+id/cb_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:button="@null"
+                android:drawableTop="@drawable/selector_checkbox_mark"
+                android:drawableTint="@color/check_text_color"
+                android:gravity="center_horizontal"
+                android:text="标注"
+                android:textColor="@color/colorPrimary"
+                android:textSize="8sp"
+                android:tint="@color/check_text_color" />
+
+            <View
+                android:layout_width="0dip"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <CheckBox
+                android:id="@+id/cb_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:button="@null"
+                android:drawableTop="@drawable/selector_checkbox_notes"
+                android:drawableTint="@color/check_text_color"
+                android:gravity="center_horizontal"
+                android:text="释文"
+                android:textColor="@color/colorPrimary"
+                android:textSize="8sp"
+                android:tint="@color/check_text_color" />
+
+            <View
+                android:layout_width="0dip"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <com.ltzk.mbsf.widget.BoldTextView
+                android:id="@+id/iv_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableTop="@mipmap/item_small"
+                android:drawableTint="@color/colorPrimary"
+                android:gravity="center_horizontal"
+                android:text="单字"
+                android:textColor="@color/colorPrimary"
+                android:textSize="8sp" />
+
+            <View
+                android:layout_width="0dip"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <com.ltzk.mbsf.widget.BoldTextView
+                android:id="@+id/iv_9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableTop="@mipmap/ic_linmo"
+                android:drawableTint="@color/colorPrimary"
+                android:gravity="center_horizontal"
+                android:text="临摹"
+                android:textColor="@color/colorPrimary"
+                android:textSize="8sp" />
+
+            <View
+                android:layout_width="0dip"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <com.ltzk.mbsf.widget.BoldTextView
+                android:id="@+id/iv_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableTop="@mipmap/ic_zitie_shou_download"
+                android:drawableTint="@color/colorPrimary"
+                android:gravity="center_horizontal"
+                android:text="下载"
+                android:textColor="@color/colorPrimary"
+                android:textSize="8sp" />
+
+            <View
+                android:layout_width="0dip"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <CheckBox
+                android:id="@+id/cb_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:button="@null"
+                android:drawableTop="@drawable/selector_checkbox_fav"
+                android:drawableTint="@color/check_text_color"
+                android:gravity="center_horizontal"
+                android:text="收藏"
+                android:textColor="@color/colorPrimary"
+                android:textSize="8sp"
+                android:tint="@color/check_text_color" />
+
+            <View
+                android:layout_width="0dip"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/iv_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="0dip"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="0dip"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ll_items"
+            android:background="@color/transparentWhiteSmoke"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:scrollbarStyle="insideOverlay"
+            android:scrollbarThumbHorizontal="@android:color/darker_gray"
+            android:scrollbars="horizontal" />
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ll_items"
+            android:background="@android:color/white"
+            android:fillViewport="true"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_shiwen"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="15sp"
+                android:textColor="@color/colorPrimary"
+                android:textIsSelectable="true" />
+        </ScrollView>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteSmoke"
+    android:orientation="vertical">
+
+    <com.ltzk.mbsf.widget.TopBar
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/black"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="字库名"
+            />
+
+        <TextView
+            android:textColor="@color/lightGray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="|"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                android:padding="10dp"
+                android:background="@null"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:id="@+id/et_name"
+                android:hint="请输入字库名"
+                android:textColorHint="@color/lightGray"
+                android:textCursorDrawable="@drawable/shape_cursor_blue"
+                android:maxLength="16"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" />
+
+            <ImageView
+                android:visibility="gone"
+                android:tint="@color/lightGray"
+                android:id="@+id/iv_delete"
+                android:padding="5dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/lightGray"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/black"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="作　者"
+            />
+
+        <TextView
+            android:textColor="@color/lightGray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="|"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                android:padding="10dp"
+                android:background="@null"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:id="@+id/et_user"
+                android:hint="请输入作者名"
+                android:textColorHint="@color/lightGray"
+                android:textCursorDrawable="@drawable/shape_cursor_blue"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" />
+            <ImageView
+                android:visibility="gone"
+                android:tint="@color/lightGray"
+                android:id="@+id/iv_delete_pwd"
+                android:padding="5dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/lightGray"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <RadioGroup
+            android:layout_marginLeft="15dp"
+            android:id="@+id/rg_kind"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <RadioButton
+                android:checked="true"
+                android:padding="5dp"
+                android:id="@+id/rb_kind_1"
+                android:text="毛笔"
+                android:textColor="@color/black"
+                android:drawablePadding="5dp"
+                android:drawableLeft="@drawable/selector_checkbox_blue"
+                android:button="@null"
+                android:background="@null"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+            <RadioButton
+                android:padding="5dp"
+                android:id="@+id/rb_kind_2"
+                android:text="硬笔"
+                android:textColor="@color/black"
+                android:drawablePadding="5dp"
+                android:drawableLeft="@drawable/selector_checkbox_blue"
+                android:button="@null"
+                android:background="@null"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/rg_font"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RadioButton
+                android:id="@+id/rb_1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/tab_checkbox_bg"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="楷"
+                android:textColor="@drawable/tab_text_color"
+                android:textSize="15sp" />
+
+
+            <RadioButton
+                android:id="@+id/rb_2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/tab_checkbox_bg"
+                android:button="@null"
+                android:gravity="center"
+                android:text="行"
+                android:textColor="@drawable/tab_text_color"
+                android:textSize="15sp" />
+
+
+            <RadioButton
+                android:id="@+id/rb_3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/tab_checkbox_bg"
+                android:button="@null"
+                android:gravity="center"
+                android:text="草"
+                android:textColor="@drawable/tab_text_color"
+                android:textSize="15sp" />
+
+
+
+            <RadioButton
+                android:id="@+id/rb_4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/tab_checkbox_bg"
+                android:button="@null"
+                android:gravity="center"
+                android:text="隶"
+                android:textColor="@drawable/tab_text_color"
+                android:textSize="15sp" />
+
+
+            <RadioButton
+                android:id="@+id/rb_5"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/tab_checkbox_bg"
+                android:button="@null"
+                android:gravity="center"
+                android:text="篆"
+                android:textColor="@drawable/tab_text_color"
+                android:textSize="15sp" />
+
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/lightGray"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:gravity="center"
+        android:background="@drawable/selector_shape_gray_blue"
+        android:padding="13dp"
+        android:id="@+id/tv_btn"
+        android:textColor="@drawable/selector_btn_gray_white"
+        android:textSize="16sp"
+        android:text="确定"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/whiteSmoke"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.ltzk.mbsf.widget.TopBar
+        android:visibility="gone"
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!--搜索头-->
+    <LinearLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:id="@+id/lay_search"
+        android:gravity="center"
+        android:background="@color/transparentWhiteSmoke"
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:tint="@color/colorPrimary"
+            android:src="@mipmap/back"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <EditText
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:drawableLeft="@mipmap/search"
+                android:drawablePadding="10dp"
+                android:maxLength="5"
+                android:singleLine="true"
+                android:imeOptions="actionSearch"
+                android:textColorHint="@color/silver"
+                android:textCursorDrawable="@drawable/shape_cursor_blue"
+                android:hint="搜索字帖"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:background="@drawable/shape_solid_white"
+                android:id="@+id/et_key"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:tint="@color/lightGray"
+                android:visibility="gone"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:layout_alignParentRight="true"
+                android:id="@+id/iv_delete"
+                android:src="@mipmap/clear"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+
+        <TextView
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"
+            android:id="@+id/tv_cannel"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="取消" />
+    </LinearLayout>
+
+    <View
+        android:background="@color/colorLine"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"/>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/lay_search_key"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:text="最近搜索"
+            android:textColor="@color/gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.ltzk.mbsf.widget.MyListView
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:dividerHeight="1dp"
+                    android:divider="@color/colorLine"
+                    android:id="@+id/lv_key"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/tv_clear"
+                    android:background="@drawable/shape_solid_transparent"
+                    android:text="清空搜索历史"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:gravity="center" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            android:id="@+id/tv_nodata"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:drawableLeft="@mipmap/nodata"
+            android:textColor="@color/lightGray"
+            android:drawableTint="@color/lightGray"
+            android:text="空空如也..."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:id="@+id/tv_error"
+            android:background="@drawable/shape_solid_transparent"
+            android:text="重新加载"
+            android:textColor="@color/colorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:gravity="center"/>
+
+
+        <!--列表-->
+        <com.ltzk.mbsf.widget.MySmartRefreshLayout
+            android:visibility="gone"
+            android:id="@+id/swipeToLoadLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srlAccentColor="@color/silver"
+                app:srlClassicsSpinnerStyle="Translate"
+                app:srlDrawableArrow="@mipmap/refresh_arrow_header"
+                app:srlDrawableArrowSize="36dp"
+                app:srlDrawableProgressSize="18dp"
+                app:srlFinishDuration="0"
+                app:srlTextSizeTime="13sp"
+                app:srlTextSizeTitle="14sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+                android:id="@+id/footer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srlAccentColor="@color/silver"
+                app:srlDrawableArrow="@mipmap/refresh_arrow_header"
+                app:srlDrawableArrowSize="36dp"
+                app:srlTextSizeTitle="14sp" />
+        </com.ltzk.mbsf.widget.MySmartRefreshLayout>
+
+        <ImageView
+            android:id="@+id/iv_def"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="4dp" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/imageView"
+        android:background="@color/whiteSmoke" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/line"
+        android:background="@color/whiteSmoke">
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="0.5dp"
+            android:background="@android:color/white"
+            android:padding="2dp" />
+
+        <TextView
+            android:id="@+id/nickname"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/avatar"
+            android:background="@android:color/white"
+            android:ellipsize="middle"
+            android:gravity="center"
+            android:padding="1dp"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_check"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:background="@color/lightCyan"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_solid_gray"
+            android:scaleType="center"
+            android:src="@mipmap/check_1"
+            app:tint="@android:color/white" />
+    </LinearLayout>
+
+    <com.ltzk.mbsf.widget.RotateTextView
+        android:id="@+id/vip"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:background="@mipmap/jiaobiao"
+        android:backgroundTint="@android:color/white"
+        android:gravity="center"
+        android:paddingBottom="24dp"
+        android:text="VIP"
+        android:textColor="@color/orange"
+        android:textSize="12sp"
+        android:visibility="gone" />
+</RelativeLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="6dp">
+
+    <TextView
+        android:id="@+id/tv_1"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginBottom="0.5dp"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:text="发布"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_2"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:text="删除"
+        android:textColor="@color/red"
+        android:textSize="14sp" />
+</LinearLayout>

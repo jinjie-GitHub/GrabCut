@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="2dp"
+    android:descendantFocusability="blocksDescendants"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TableLayout
+        android:id="@+id/tl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@android:color/white"
+        android:padding="3dp">
+
+        <TableRow
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <com.ltzk.mbsf.widget.MyLoadingImageView
+                android:id="@+id/iv_thumb_url12"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/transparentWhiteSmoke" />
+
+            <com.ltzk.mbsf.widget.MyLoadingImageView
+                android:id="@+id/iv_thumb_url8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@color/transparentWhiteSmoke" />
+
+            <com.ltzk.mbsf.widget.MyLoadingImageView
+                android:id="@+id/iv_thumb_url4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@color/transparentWhiteSmoke" />
+
+            <com.ltzk.mbsf.widget.MyLoadingImageView
+                android:id="@+id/iv_thumb_url0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@color/transparentWhiteSmoke" />
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="1dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <com.ltzk.mbsf.widget.MyLoadingImageView
+                android:id="@+id/iv_thumb_url13"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/transparentWhiteSmoke" />
+
+            <com.ltzk.mbsf.widget.MyLoadingImageView
+                android:id="@+id/iv_thumb_url9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@color/transparentWhiteSmoke" />
+
+            <com.ltzk.mbsf.widget.MyLoadingImageView
+                android:id="@+id/iv_thumb_url5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@color/transparentWhiteSmoke" />
+
+            <com.ltzk.mbsf.widget.MyLoadingImageView
+                android:id="@+id/iv_thumb_url1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@color/transparentWhiteSmoke" />
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="1dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <com.ltzk.mbsf.widget.MyLoadingImageView
+                android:id="@+id/iv_thumb_url14"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/transparentWhiteSmoke" />
+
+            <com.ltzk.mbsf.widget.MyLoadingImageView
+                android:id="@+id/iv_thumb_url10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@color/transparentWhiteSmoke" />
+
+            <com.ltzk.mbsf.widget.MyLoadingImageView
+                android:id="@+id/iv_thumb_url6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@color/transparentWhiteSmoke" />
+
+            <com.ltzk.mbsf.widget.MyLoadingImageView
+                android:id="@+id/iv_thumb_url2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@color/transparentWhiteSmoke" />
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="1dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <com.ltzk.mbsf.widget.MyLoadingImageView
+                android:id="@+id/iv_thumb_url15"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/transparentWhiteSmoke" />
+
+            <com.ltzk.mbsf.widget.MyLoadingImageView
+                android:id="@+id/iv_thumb_url11"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@color/transparentWhiteSmoke" />
+
+            <com.ltzk.mbsf.widget.MyLoadingImageView
+                android:id="@+id/iv_thumb_url7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@color/transparentWhiteSmoke" />
+
+            <com.ltzk.mbsf.widget.MyLoadingImageView
+                android:id="@+id/iv_thumb_url3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@color/transparentWhiteSmoke" />
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:id="@+id/lay"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:layout_below="@+id/tl"
+        android:layout_marginTop="0.6dp"
+        android:background="@android:color/white"
+        android:orientation="horizontal">
+
+        <com.ltzk.mbsf.widget.BoldTextView
+            android:id="@+id/author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:ems="1"
+            android:gravity="center"
+            android:lineSpacingMultiplier="0.9"
+            android:textColor="@color/gray"
+            android:textSize="7sp" />
+
+        <View
+            android:id="@+id/author_line"
+            android:layout_width="0.6dp"
+            android:layout_height="match_parent"
+            android:background="@color/whiteSmoke" />
+
+        <com.ltzk.mbsf.widget.BoldTextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:lineSpacingMultiplier="0.9"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="11sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1dp"
+            android:background="@android:color/white"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:src="@mipmap/next"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <com.ltzk.mbsf.widget.RotateTextView
+        android:id="@+id/vip"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:background="@mipmap/jiaobiao"
+        android:backgroundTint="@android:color/white"
+        android:gravity="center"
+        android:paddingBottom="24dp"
+        android:text="VIP"
+        android:textColor="@color/orange"
+        android:textSize="12sp" />
+</RelativeLayout>

@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <com.spx.library.ThumbExoPlayerView
+        android:id="@+id/player_view_exo_thumbnail"
+        android:layout_width="27dp"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="170dp"
+        android:background="@android:color/black">
+
+        <com.spx.library.view.ZoomLayout
+            android:id="@+id/zoomLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+
+            <SurfaceView
+                android:id="@+id/player_view_mp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.spx.library.view.ZoomLayout>
+
+        <com.spx.library.view.CropView
+            android:id="@+id/cropView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0"
+            app:background_color="@android:color/transparent"
+            app:crop_enabled="false"
+            app:crop_mode="free"
+            app:frame_color="@color/frame_bar_color"
+            app:frame_stroke_weight="1dp"
+            app:guide_show_mode="not_show"
+            app:guide_stroke_weight="1dp"
+            app:handle_color="@color/frame_bar_color"
+            app:handle_show_mode="show_always"
+            app:handle_size="18dp"
+            app:handle_width="4dp"
+            app:initial_frame_scale="0.3"
+            app:min_frame_size="60dp"
+            app:overlay_color="@android:color/transparent"
+            app:touch_padding="2dp" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:textColor="@color/clip_color"
+        android:textSize="11sp" />
+
+    <TextView
+        android:id="@+id/toast_msg_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_above="@+id/clipContainer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:textColor="@color/clip_color"
+        android:textSize="11sp" />
+
+    <com.spx.library.view.ClipContainer
+        android:id="@+id/clipContainer"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_above="@+id/layout_bottom"
+        android:layout_marginBottom="10dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/ic_video_clip_framebar_bg"
+            android:nestedScrollingEnabled="false"
+            android:paddingLeft="20dp"
+            android:paddingTop="5dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp" />
+
+        <RelativeLayout
+            android:id="@+id/frame_left"
+            android:layout_width="@dimen/clip_frame_bar_width_outer"
+            android:layout_height="match_parent"
+            android:layout_gravity="left">
+
+            <ImageView
+                android:id="@+id/frame_left_iv"
+                android:layout_width="@dimen/clip_frame_bar_width"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_video_clip_framebar_left"
+                android:tint="@color/frame_bar_color" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="6dp"
+                android:alpha="0.75"
+                android:background="@android:color/black" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:alpha="0.75"
+                android:background="@android:color/black" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/frame_right"
+            android:layout_width="@dimen/clip_frame_bar_width_outer"
+            android:layout_height="match_parent"
+            android:layout_gravity="right">
+
+            <ImageView
+                android:id="@+id/frame_right_iv"
+                android:layout_width="@dimen/clip_frame_bar_width"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_video_clip_framebar_right"
+                android:tint="@color/frame_bar_color" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="20dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="7dp"
+                android:alpha="0.75"
+                android:background="@android:color/black" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="20dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="11dp"
+                android:alpha="0.75"
+                android:background="@android:color/black" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/clip_play_progress_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <ImageView
+                android:id="@+id/clip_play_progress_bar"
+                android:layout_width="4dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/ic_clip_play_progress" />
+        </LinearLayout>
+    </com.spx.library.view.ClipContainer>
+
+    <RelativeLayout
+        android:id="@+id/layout_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/black">
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:padding="10dp"
+            android:scaleType="center"
+            android:src="@mipmap/ic_video_close"
+            android:tint="@color/clip_color" />
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/clip_color"
+            android:textSize="15sp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_crop"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:padding="10dp"
+            android:scaleType="center"
+            android:src="@mipmap/ic_video_crop"
+            android:tint="@color/clip_color" />
+
+        <ImageView
+            android:id="@+id/iv_square"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:padding="10dp"
+            android:scaleType="center"
+            android:src="@mipmap/ic_video_square"
+            android:tint="@color/clip_color"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/confirm"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:padding="10dp"
+            android:scaleType="center"
+            android:src="@mipmap/ic_video_done"
+            android:tint="@color/clip_color" />
+    </RelativeLayout>
+</RelativeLayout>

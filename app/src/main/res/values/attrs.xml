@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--loading_view-->
+    <declare-styleable name="MyLoadingImageView">
+        <attr name="padding" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="UnderlineTextView">
+        <attr name="underline_color" format="color" />
+        <attr name="underline_height" format="dimension" />
+        <attr name="underline_padding" format="dimension" />
+        <attr name="underline_dash" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="BoundedView">
+        <attr name="bounded_width" format="dimension" />
+        <attr name="bounded_height" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="ucrop_UCropView">
+
+        <!--Crop image view-->
+        <attr name="ucrop_aspect_ratio_x" format="float" />
+        <attr name="ucrop_aspect_ratio_y" format="float" />
+
+        <!--Overlay view-->
+        <attr name="ucrop_show_oval_crop_frame" format="boolean" />
+        <attr name="ucrop_oval_dimmed_layer" format="boolean" />
+        <attr name="ucrop_dimmed_color" format="color" />
+
+        <attr name="ucrop_grid_stroke_size" format="dimension" />
+        <attr name="ucrop_grid_color" format="color" />
+        <attr name="ucrop_grid_row_count" format="integer" />
+        <attr name="ucrop_grid_column_count" format="integer" />
+        <attr name="ucrop_show_grid" format="boolean" />
+
+        <attr name="ucrop_frame_stroke_size" format="dimension" />
+        <attr name="ucrop_frame_color" format="color" />
+        <attr name="ucrop_show_frame" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="CropView">
+        <attr name="cv_corner_line_color" format="reference|color" /><!--拐角颜色-->
+        <attr name="cv_scan_line_color" format="reference|color" /><!--网格线颜色-->
+        <attr name="cv_corner_line_with" format="dimension" /><!--拐角线宽度-->
+        <attr name="cv_corner_line_height" format="dimension" /><!--拐角线高度-->
+        <attr name="cv_border_length" format="dimension" /><!--边框长度，初始化正方形-->
+        <attr name="cv_min_border_length" format="dimension" /><!--最小边框长度-->
+        <attr name="cv_is_show_corner_line" format="boolean" /><!--是否显示拐角线-->
+        <attr name="cv_is_show_alpha_bg" format="boolean" /><!--是否显示背景-->
+        <attr name="cv_is_show_square" format="boolean" /><!--是否正方形-->
+        <attr name="cv_width_percent" format="string" /><!--宽度占屏幕比例，10%w  10%h-->
+        <attr name="cv_height_percent" format="string" /><!--高度占屏幕比例,10%w  10%h-->
+    </declare-styleable>
+
+    <declare-styleable name="UnderLineRadioBtn">
+        <attr name="lineH" format="dimension" />
+        <attr name="lineW" format="float|dimension" />
+        <attr name="lineCheckColor" format="color" />
+        <attr name="lineDefaultColor" format="color" />
+        <attr name="lineRadius" format="dimension" />
+        <attr name="textCheckColor" format="color" />
+        <attr name="textDefaultColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="SubsamplingScaleImageView">
+        <attr name="src" format="reference"/>
+        <attr name="assetName" format="string"/>
+        <attr name="panEnabled" format="boolean"/>
+        <attr name="zoomEnabled" format="boolean"/>
+        <attr name="quickScaleEnabled" format="boolean"/>
+        <attr name="tileBackgroundColor" format="color"/>
+    </declare-styleable>
+</resources>
